@@ -1,0 +1,102 @@
+<!--index.wxml-->
+<view class="page">
+  <!-- 导航栏 -->
+   <wux-tabs style="position: fixed;top: 0;width: 100%;right: 0;z-index: 100;" wux-class="bordered"theme="positive" controlled current="{{ key }}" bindchange="onTabsChange">
+        <block wx:for="{{ tabs }}" wx:key="key">
+            <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
+        </block>
+    </wux-tabs>
+    <!-- 导航栏循环显示 -->
+    <!-- <view current="{{ index }}" bindchange="onSwiperChange">    
+        <view hidden="{{index == 0? false: true}}">
+          <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+            <view class="bottomclass">
+                <wux-button type="light" bind:click="showActionSheet1"><wux-icon type="ios-add-circle-outline" size="25" /></wux-button>
+            </view>
+        </view>
+        <view hidden="{{index == 1? false: true}}">
+          <component_share/>
+        </view>
+        <view hidden="{{index == 2? false: true}}">
+          <component_user/> 
+        </view>
+    </view> -->
+
+    <!-- 提示框 -->
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <!-- 底部 -->
+    <view class="bottomfloatclass" hidden="{{index == 0? false: true}}">
+        <wux-button style="margin-left: 10vw;" type="light" bind:click="showActionSheet1"><wux-icon type="ios-add-circle-outline" size="30" /></wux-button>
+    </view>
+    <!-- 左右滑动 -->
+<swiper bindchange="bindchange" current="{{index}}" style="height:{{swiperheight}}vh;margin-top: 7vh;">
+    <swiper-item>
+      <block wx:for="{{showData}}" wx:key="id" wx:for-index="idx" wx:for-item="folders">
+        <view class="navigator" bindtap="setfileListId" id="{{idx}}">
+          <view class="cells_after-title">
+            <view class="_cell">
+                <!-- <view class="_cell__hd"> -->
+                    <image src="{{showData[idx].iconUrl}}" style="vertical-align: middle;width: 10vw;height: 7vh;"></image>
+                    <view class="_cell__bd" style="top : {{he[idx]}}vh">{{showData[idx].foldersName}}
+                      <view style="font-size: 1.5vh;line-height: 2.5vh;font-weight:400;color: #7d7e80;">{{showData[idx].createTime}}</view>
+                    </view>
+                <!-- </view> -->
+                
+                
+            </view>
+          </view>
+        </view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <view >
+        <text>暂未开放</text>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      
+        <view class="userinfo-container">
+        <view class='userinfo-circle-bg' style="background: {{color}};left: -525rpx;"></view>
+        <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{user_info.avatarUrl}});left:295rpx;top:0;"
+      size="default"
+    ></button>
+        <view class='userinfo-square-bg userinfo-container' style="left:24rpx;">
+            <view class="userinfo-info-username">{{user_info.nickName}}</view>
+            <view class="userinfo-info-list">
+                <view class="userinfo-info-item">
+                    <view class="userinfo-info-item-name">余额</view>
+                    <view class="userinfo-info-item-value">{{userInfo.money ? userInfo.money : 0}}</view>
+                </view>
+                <view class="userinfo-info-item">
+                    <view class="userinfo-info-item-name">积分</view>
+                    <view class="userinfo-info-item-value">{{userInfo.score ? userInfo.score : 0}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+     
+    </swiper-item>
+  
+</swiper>
+
+
+    <!--对话框  -->
+    <mp-dialog title="新建文件夹" show="{{dialogShow}}" bindbuttontap="formSubmit" buttons="{{buttons}}">
+        <view class='item-add'>
+          <view class='item-name'>
+            <input name="name" placeholder='请输入文件夹名' auto-focus value='{{inputValue}}' bindinput='keyInput'></input>
+          </view>
+        </view>
+    </mp-dialog>
+
+    <!-- 视频 -->
+    <wux-landscape visible="{{ visible1 }}" bind:close="onClose1">
+      <video id="myVideo" src="https://6865-hezuidema-vh7b2-1301185029.tcb.qcloud.la/wangpan/oOGkw5TPO4Q_zikVRXlsgubxIvYc/06c2ce5d7.mp4?sign=dc567d41e0093fa7f328ee6c0ddf8654&t=1582119140" style="height: 350px" />
+    </wux-landscape>
+    
+</view>
+

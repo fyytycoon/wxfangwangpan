@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wux-tabs": "/components/wuxUI/tabs/index",
+    "wux-tab": "/components/wuxUI/tab/index",
+    "wux-badge": "/components/wuxUI/badge/index",
+    "component_car": "/pages/component/car/car",
+    "component_index": "/pages/component/index/index",
+    "component_my": "/pages/wangpan/user/index"
+  }
+}

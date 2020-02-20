@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="page">
+   <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
+        <block wx:for="{{ tabs }}" wx:key="key">
+            <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
+        </block>
+    </wux-tabs>
+    <view current="{{ index }}" bindchange="onSwiperChange">    
+        <view hidden="{{index == 0? false: true}}">
+          <component_index/>
+        </view>
+        <view hidden="{{index == 1? false: true}}">
+          <component_car/>
+        </view>
+        <view hidden="{{index == 2? false: true}}">
+          <component_my/> 
+        </view>
+    </view> 
+</view>
+
+<view class="container">
+
+  <view class="uploader">
+    <navigator url="./serverapi/serverapi" open-type="navigate" class="uploader-text">
+      <text>服务端调用</text>
+    </navigator>
+  </view>
+
+  <view class="uploader">
+    <navigator url="./cloudid/cloudid" open-type="navigate" class="uploader-text">
+      <text>开放数据调用</text>
+    </navigator>
+  </view>
+
+  <view class="uploader">
+    <navigator url="./callback/callback" open-type="navigate" class="uploader-text">
+      <text>消息推送</text>
+    </navigator>
+  </view>
+
+  <view class="uploader">
+    <navigator url="../wangpan/demo/index" open-type="navigate" class="uploader-text">
+      <text>demo</text>
+    </navigator>
+  </view>
+
+
+</view>

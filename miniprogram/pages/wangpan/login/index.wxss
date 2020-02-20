@@ -1,0 +1,83 @@
+/**index.wxss**/
+page {
+	height: 100%;
+}
+.container-box {
+	background: #fff;
+    position: relative;
+    width: 750rpx;
+    height: 100%;
+    text-align: center;
+    justify-content:none;
+    flex-direction:column;
+	padding:0;
+	display:flex;
+	align-items:center;
+}
+.login-top{
+	align-items:center;
+	display:flex;
+	height: 359rpx;
+	width: 609rpx;
+	border-bottom: solid 1px rgba(204,204,204,0.5);
+}
+.login-top image{
+	border-radius: 50%;
+	border: solid 1px #f4f5fa;
+	margin-bottom: 8rpx;
+}
+.logo-box{
+	margin:0 auto;
+}
+.logo-box view{
+	font-size: 40rpx;
+	-webkit-font-smoothing: antialiased;
+  	font-family: PingFangSC-Medium;
+  	-webkit-text-size-adjust: none;
+}
+.login-bottom{
+	padding: 53rpx 0;
+	text-align: left;
+	font-size: 17px;
+	line-height:70rpx;
+}
+.container-box .logo{
+	height: 140rpx;
+	width: 140rpx;
+}
+/*权限列表*/
+.authority-list{
+	color: #8b8b8b;
+	font-size: 15px;
+}
+.confirm-login{
+  padding: 0px 24px;
+	width: 610rpx;
+	height: 94rpx;
+	line-height:94rpx;
+	margin-top: 72rpx;
+	color: #fff;
+	background: #19ad19;
+	font-size: 36rpx;
+	border-radius: 10rpx;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 662299 */
+  src: url('//at.alicdn.com/t/font_662299_ygtbyk50e6340a4i.eot');
+  src: url('//at.alicdn.com/t/font_662299_ygtbyk50e6340a4i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_662299_ygtbyk50e6340a4i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_662299_ygtbyk50e6340a4i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_662299_ygtbyk50e6340a4i.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont";
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+.dian:before{
+  content: "\e608";
+}

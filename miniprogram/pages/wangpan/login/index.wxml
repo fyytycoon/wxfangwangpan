@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container-box">
+    <view class="login-top">
+        <view class="logo-box"> 
+            <image src="{{head_img}}" class="logo"></image>
+            <view>{{nick_name}}</view>
+        </view>
+    </view>
+    <view class="login-bottom">
+        <view>为了更好的体验，请确认授权以下信息</view>
+        <view class="authority-list"><text class="iconfont dian"></text>获得你的公开信息（昵称、头像等）</view>
+        <button class="confirm-login" style="background:{{color}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">确认</button>
+        <button class="confirm-login" style="background:#EE3B3B" bindtap="onBack">取消</button>
+    </view>
+</view>
